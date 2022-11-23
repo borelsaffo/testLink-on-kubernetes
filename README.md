@@ -32,14 +32,33 @@ vous trouverez ici tous les fichier YAML anterinant notre déploiement
 l'ordre de déploiement est celui définit pat la liste d'objet plus haut
 
 #### Commande de déploiement : 
-        kubctl apply app-testlink-namespace.yml
-        kubctl apply app-testlink-secret.yml
-        kubctl apply serice-clusterip.yml
-        kubctl apply serice-nodeport.yml
-        kubctl apply mariadb-deployment.yml
-        kubctl apply testlink-deployment.yml
-        
+      1-  kubctl apply -f app-testlink-namespace.yml
+      2-  kubctl apply -f app-testlink-secret.yml
+      3-  kubctl apply -f service-clusterip.yml
+      4-  kubctl apply -f service-nodeport.yml
+      5-  kubctl apply -f mariadb-deployment.yml
+      6-  kubctl apply -f testlink-deployment.yml
+      
+1-  kubctl apply -f app-testlink-namespace.yml
 
+ ![image](https://user-images.githubusercontent.com/27947973/203554138-4bb8e345-2d42-4d93-9f49-84f97a790c85.png)
+ 
+ 2-  kubctl apply -f app-testlink-secret.yml
+ 
+ ![image](https://user-images.githubusercontent.com/27947973/203554745-c4deeac3-6e2b-4eba-8b52-0ca664d18294.png)
+
+ 3-  kubctl apply -f service-clusterip.yml
+ 
+ ![image](https://user-images.githubusercontent.com/27947973/203555356-36bc8216-d1e5-4ae4-90b6-a665bd272194.png)
+ 
+ 4-  kubctl apply -f serice-nodeport.yml
+ 
+ ![image](https://user-images.githubusercontent.com/27947973/203555654-868a7e73-93e0-4fcc-ab3b-3469790723ee.png)
+
+ 5-  kubctl apply -f mariadb-deployment.yml
+ 
+ 6-  kubctl apply -f testlink-deployment.yml
+  
 nous avons créer un objet de type "namespace" qui représente le namespace dans lequel nous
 allons effectué notre depeloiement. Les namespace ici étant des objets Kubernetes qui permettent d'isolé les environnements ou les déploiement sur un meme serveur.
 

@@ -80,7 +80,7 @@ remplissant les champ comme indiquer sur l'image précédente.
 l'image suivante illustre la création de notre premier projet
 ![image](https://user-images.githubusercontent.com/27947973/203509283-6bbed94c-29b7-42d2-8cdc-dcead72243b6.png)
 ![image](https://user-images.githubusercontent.com/27947973/203509351-5778cd3c-dcda-4b4e-9463-9cd7ec382fbf.png)
-Une fois le projet créer vous le voyer afficher dans la liste des projets sous testLink comme le montre l'image suivnte : 
+Une fois le projet créer vous le voyez afficher dans la liste des projets sous testLink comme le montre l'image suivnte : 
 ![image](https://user-images.githubusercontent.com/27947973/203509528-1773f266-d433-4452-bb7a-48e5f79ea58f.png)
 vous pouvez l'éditer en cliquant dessus.
 

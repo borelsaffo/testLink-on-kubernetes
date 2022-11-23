@@ -1,0 +1,16 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: testlink
+  labels:
+    name: testlink
+  namespace: testlink
+spec:
+  type: ClusterIP
+  selector:
+    app: testlink
+    tier: mariadb
+  ports:
+    - protocol: TCP
+      port: 3306
+      targetPort: 3306

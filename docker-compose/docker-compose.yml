@@ -1,0 +1,29 @@
+version: '3.1'
+services:
+  mariadb:
+    image: bitnami/mariadb:latest
+    environment:
+      - ALLOW_EMPTY_PASSWORD=yes
+      - MARIADB_USER=bn_testlink
+      - MARIADB_PASSWORD=bitnami
+      - MARIADB_DATABASE=bitnami_testlink
+    volumes:
+      - mariadb_data:/bitnami/mariadb
+  testlink:
+    #image: bitnami/testlink:latest
+    image: bitnami/testlink:1.9.16
+    ports:
+      #- "8082:8080"
+      - "8082:80"    
+    environment:
+      - ALLOW_EMPTY_PASSWORD=yes
+      - TESTLINK_DATABASE_USER=bn_testlink
+      - TESTLINK_DATABASE_PASSWORD=bitnami
+      - TESTLINK_DATABASE_NAME=bitnami_testlink
+    volumes:
+      - testlink_data:/bitnami/testlink      
+    depends_on:
+      - mariadb
+volumes:
+  mariadb_data:
+  testlink_data:      

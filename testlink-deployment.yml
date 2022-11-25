@@ -3,7 +3,7 @@ kind: Deployment
 metadata:
   name: testlink
   labels:
-    app: testlink
+    app: teslink
   namespace: testlink
 spec:
   replicas: 2
@@ -20,27 +20,26 @@ spec:
         tier: frontend
     spec:
       containers:
-      - image: wordpress:latest
-        name: wordpress
+      - image: bitnami/testlink:1.9.16
+        name: testlink
         env:
-        - name: WORDPRESS_DB_USER
-          value: toto
-        - name: WORDPRESS_DB_NAME
-          value: wordpress
-        - name: WORDPRESS_DB_HOST
-          value: wp-mysql
-        - name: WORDPRESS_DB_PASSWORD
-          valueFrom:
-            secretKeyRef:
-              name: app-wordpress-secret
-              key: wordpress_db_password
+        - name: ALLOW_EMPTY_PASSWORD
+          value: yes
+        - name: TESTLINK_DB_USER
+          value: bn_testlink
+        - name: TESTLINK_DB_NAME
+          value: bitnami_testlink
+        - name: testlink_DB_PASSWORD
+          value: bitnami
         ports:
         - containerPort: 80
-          name: wordpress
+          name: testlink
         volumeMounts:
-        - name: wp-persistent-storage
-          mountPath: /var/www/html
+        - name: testlink_data
+          mountPath: /home/testplan
       volumes:
-      - name: wp-persistent-storage
+      - name: testlink_data
         hostPath:
-          path: /data/wordpress
+          path: /bitnami/testlink
+      depend_on:
+        - mariadb
